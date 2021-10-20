@@ -1,5 +1,20 @@
-// ------------------------------------------------------------------------------
-//
+// ---------------------------------------------------------------------------------------------------
+// Name: encoderTurnFunctions
+//----------------------------------------------------------------------------------------------------
+// Description:
+// Computes the amount you want to move (in degrees), sets the brakes to coast if they are on, resets
+// the motor encoders, then checks if we are turning left or right by seeing if the degreesToTurn is
+// greater or equal to 0. If we are turning to the right the right wheel is stopped and the left wheel
+// is going at the speed we want it to. If we are turning to the left, the left wheel is stopped and 
+// the right wheel is going at the speed we want it to. We wait for the left motor encoder is greater
+// than or equal to the degrees to move. Because we are stopped on the left or right encoder, we can
+// add them together because one will always be zero.
+//----------------------------------------------------------------------------------------------------
+//Inputs:
+//	speed		Float	Speed of left wheel
+//	degreesToTurn	Float	Speed of the right wheel
+//	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
+//----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------
 void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 {
@@ -47,9 +62,7 @@ void sideTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 
 }
 
-// ------------------------------------------------------------------------------
-//
-//----------------------------------------------------------------------------------------------------
+
 void centerTurnEncoder(float speed, float degreesToTurn, bool brakeMode)
 {
 
