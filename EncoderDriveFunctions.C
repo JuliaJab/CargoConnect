@@ -59,14 +59,19 @@ void driveEncoderDistance(float leftspeed, float rightSpeed, float rotationsToMo
 
 
 //----------------------------------------------------------------------------------------------------
-// Name: 
+// Name: driveStraightEncoderDistance
 //----------------------------------------------------------------------------------------------------
-// Description:
-//
+// Description: First, we check that our rotations are positive. Next, compute the number of degrees 
+// to move (360 * rotationsToMove). We also reset the motor encoder and turn the brakes off. While the 
+// left motor encoder is less than or equal to the rotationsToMove, we continue to go forward. If the 
+// number is greater we turn off the motors and turn on the brake mode on and stop.
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//
+//	speed   	Float	speed
+//      rotationsToMove	Float	Distance to move
+//	brakeMode	Bool	True = Turn on brakes at the end;  False = Coast at the end
 //----------------------------------------------------------------------------------------------------
+
 void driveStraightEncoderDistance(float speed, float rotationsToMove, bool brakeMode)
 {
 
@@ -75,8 +80,8 @@ void driveStraightEncoderDistance(float speed, float rotationsToMove, bool brake
 	float speedLeft;
 	float speedRight;
 	float degreesToMove;
-
-
+	
+	
 	// Always make sure rotations is positive.
 	if (rotationsToMove < 0)
 	{
