@@ -2,14 +2,21 @@
 // Name: driveForTime
 //----------------------------------------------------------------------------------------------------
 // Description:
-// 	This funtion sets the left wheel speed, right wheel speed for a period of time.
+// 	
 //----------------------------------------------------------------------------------------------------
 //Inputs:
-//	
+//	leftSpeed	Float	Speed of left wheel
+//      rightSpeed	Float   Speed of right wheel
+// 	secondsToMove   Float   How many secs. we want to move
 //----------------------------------------------------------------------------------------------------
+void driveForTime(float leftspeed, float rightSpeed, float secondsToMove)
+{
+	setMotorSpeed(leftDrive, leftspeed);
+	setMotorSpeed(rightDrive, rightSpeed);	
+	
 
-
-
+	
+}
 
 
 
